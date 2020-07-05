@@ -1,0 +1,14 @@
+<!-- Creates a layout with a left and right sidenav and implicit content. -->
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+        <div *ngFor="let item of menuOptions">
+            <a mat-list-item [routerLink]="item.link"> {{item.label}} </a>
+        </div>
+    </mat-sidenav>
+    <section>
+        <div style="height: 88vh;">
+
+            <router-outlet></router-outlet>
+        </div>
+    </section>
+</mat-sidenav-container>

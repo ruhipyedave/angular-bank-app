@@ -1,0 +1,24 @@
+<mat-toolbar>
+    <span>Create Account</span>
+</mat-toolbar>
+<mat-card class="my-card">
+    <mat-card-content>
+        <form class="my-form" [formGroup]="accForm">
+            <mat-form-field class="full-width" *ngIf="user.role === USER.roles.staff">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Email" name="email" formControlName="email">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Account Type</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let type of ACCOUNT_TYPES | keyvalue" [value]="type.key">
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button (click)="register()" color="primary">CREATE</button>
+    </mat-card-actions>
+</mat-card>
