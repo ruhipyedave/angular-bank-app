@@ -27,7 +27,7 @@ export class CreateAccComponent implements OnInit {
   }
   createAccount() {
     const payload = {
-      type: this.accForm.value.type,
+      type: parseInt(this.accForm.value.type),
       email: this.accForm.value.email,
     };
 
