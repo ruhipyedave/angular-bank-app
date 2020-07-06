@@ -31,7 +31,6 @@ export class CustomersComponent implements OnInit {
 	}
 
 	listUsers(event?: PageEvent) {
-		debugger;
 		if (event) {
 			this.limit = event.pageSize;
 			this.offset = this.limit * event.pageIndex;

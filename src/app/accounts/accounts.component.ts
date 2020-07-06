@@ -35,7 +35,6 @@ export class AccountsComponent implements OnInit {
   }
 
   list(event?: PageEvent) {
-    debugger;
     if (event) {
       this.limit = event.pageSize;
       this.offset = this.limit * event.pageIndex;

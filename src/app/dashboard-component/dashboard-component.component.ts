@@ -40,7 +40,6 @@ export class DashboardComponentComponent implements OnInit {
       (response: any) => {
         // route to home screen
         // store token in local storage
-        debugger;
         const user = response && response.data ? response.data : {};
         if (user.role == USER.roles.staff) {
           this.menuOptions = this.staffMenu;
@@ -49,7 +48,6 @@ export class DashboardComponentComponent implements OnInit {
         this.router.navigate(["/dashboard"]);
       },
       (error: HttpErrorResponse) => {
-        debugger
         this.router.navigate(["/login"]);
       }
     )

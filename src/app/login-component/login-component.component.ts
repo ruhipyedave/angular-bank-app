@@ -38,7 +38,6 @@ export class LoginComponentComponent implements OnInit {
         // route to home screen
         // store token in local storage
         this.error = "";
-        debugger;
         localStorage.setItem('token', response.data.token);
         this.router.navigate(["/dashboard"]);
       },
