@@ -45,6 +45,7 @@ import { CreateAccComponent } from './accounts/create-acc/create-acc.component';
           { path: 'accounts', component: AccountsComponent, pathMatch: 'full' },
           { path: 'accounts/create', component: CreateAccComponent, pathMatch: 'full' },
           { path: 'transactions', component: TransactionsComponent, pathMatch: 'full' },
+          { path: 'customers/create', component: RegistrationComponentComponent, pathMatch: 'full' },
           { path: 'customers', component: CustomersComponent, pathMatch: 'full' },
         ]
       },

@@ -1,4 +1,11 @@
 <!-- Creates a layout with a left and right sidenav and implicit content. -->
+<div *ngIf="user">
+    Welcome {{user.name + " " + (user.lname ? user.lname : " !!!")}}
+
+    Account Number: {{account.no}}
+    Balance: {{account.balance}}
+    Currency: {{account.currency}}
+</div>
 <mat-sidenav-container>
     <mat-sidenav #sidenav mode="side" [(opened)]="opened">
         <div *ngFor="let item of menuOptions">

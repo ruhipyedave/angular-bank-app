@@ -1,12 +1,16 @@
 <mat-toolbar>
-    <span>Registration</span>
+    <span>Create Customer</span>
 </mat-toolbar>
 <mat-card class="my-card">
     <mat-card-content>
         <form class="my-form" [formGroup]="signUpForm">
             <mat-form-field class="full-width">
-                <mat-label>Name</mat-label>
-                <input matInput placeholder="Name" name="name" formControlName="name">
+                <mat-label>First Name: </mat-label>
+                <input matInput placeholder="First Name" name="name" formControlName="name">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Last Name: </mat-label>
+                <input matInput placeholder="Last Name" name="lname" formControlName="lname">
             </mat-form-field>
             <mat-form-field class="full-width">
                 <mat-label>Email</mat-label>
@@ -16,9 +20,13 @@
                 <mat-label>Password</mat-label>
                 <input matInput placeholder="Password" name="password" formControlName="password">
             </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Post Code</mat-label>
+                <input matInput placeholder="postCode" name="postCode" formControlName="postCode">
+            </mat-form-field>
         </form>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-raised-button (click)="register()" color="primary">REGISTER</button>
+        <button mat-raised-button (click)="register()" color="primary">Add Customer</button>
     </mat-card-actions>
 </mat-card>

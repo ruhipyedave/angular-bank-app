@@ -15,8 +15,10 @@ export class RegistrationComponentComponent implements OnInit {
   ) { }
   signUpForm = new FormGroup({
     name: new FormControl(''),
+    lname: new FormControl(''),
     email: new FormControl(''),
     password: new FormControl(''),
+    postCode: new FormControl(''),
   });
 
   error: string = "";
@@ -26,8 +28,10 @@ export class RegistrationComponentComponent implements OnInit {
   register() {
     const payload = {
       name: this.signUpForm.value.name,
+      lname: this.signUpForm.value.lname,
       email: this.signUpForm.value.email,
-      password: this.signUpForm.value.password
+      password: this.signUpForm.value.password,
+      postCode: this.signUpForm.value.postCode
     };
 
     this.authServeice.signUp(payload).subscribe(

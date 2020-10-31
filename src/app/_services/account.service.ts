@@ -13,12 +13,12 @@ export class AccountService {
 
   }
 
-  getAccById(id) {
-    return this.apiService.get(`${this.path}/:${id}`, true);
+  getAccountDetails() {
+    return this.apiService.get(`${this.path}`, true);
   }
 
-  listAccounts(query) {
-    const basePath = `${this.path}/${query}`;
+  listCurrencies(query) {
+    const basePath = `/currencies/${query}`;
     return this.apiService.get(basePath, true);
   }
 
@@ -26,8 +26,5 @@ export class AccountService {
     return this.apiService.post(`${this.path}/`, payload, true);
   }
 
-  changeStatus(id: string, payload: object) {
-    return this.apiService.patch(`${this.path}/${id}`, payload, true);
-  }
 
 }

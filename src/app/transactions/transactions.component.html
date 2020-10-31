@@ -1,1 +1,27 @@
-<p>transactions works!</p>
+<mat-toolbar>
+    <span>Create Transaction</span>
+</mat-toolbar>
+<mat-card class="my-card">
+    <mat-card-content>
+        <form class="my-form" [formGroup]="transactionForm">
+            <mat-form-field class="full-width" *ngIf="user.role === USER.roles.staff">
+                <mat-label>Customer</mat-label>
+                <mat-select formControlName="mode">
+                    <mat-option [value]="1">
+                        Deposit
+                    </mat-option>
+                    <mat-option [value]="2">
+                        Withdrawl
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Amount: </mat-label>
+                <input matInput placeholder="Amount" name="amt" formControlName="amt">
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button (click)="createAccount()" color="primary">CREATE</button>
+    </mat-card-actions>
+</mat-card>
